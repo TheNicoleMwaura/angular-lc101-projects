@@ -1,3 +1,5 @@
+
+
 <div class="chores">
     <h3>Chores</h3>
     <ul>
@@ -5,6 +7,8 @@
     </ul>
 </div>
 <hr>
+<p  *ngIf =  "chores.length > finishedChores.length ">Work harder!</p>
+
 <div class="doneChores">
     <h3>Done Chores</h3>
     <ul>
@@ -12,3 +16,9 @@
     </ul>
 </div>
 <hr>
+
+<img *ngIf = "chores.length === 0 || finishedChores.length > chores.length; else noAllowanceTest " src="{{targetImage}}">
+<ng-template #noAllowanceTest>
+    <p>No allowance yet.</p>
+    
+    </ng-template>
